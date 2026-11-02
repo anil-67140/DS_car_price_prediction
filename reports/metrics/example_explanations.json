@@ -1,0 +1,242 @@
+[
+  {
+    "actual_inr": 175000.0,
+    "input": {
+      "company": "Ford",
+      "fuel_type": "Petrol",
+      "kms_driven": 75000.0,
+      "name": "Ford Figo Petrol LXI",
+      "year": 2011
+    },
+    "predicted_inr": 145753.56962283334,
+    "top_factors": [
+      {
+        "approx_inr_effect": -77595.58481281763,
+        "direction": "lowers price",
+        "factor": "Model",
+        "log_effect": -0.42681894562496314,
+        "pct_effect": -34.74183056966695
+      },
+      {
+        "approx_inr_effect": -15518.904060400126,
+        "direction": "lowers price",
+        "factor": "Fuel type",
+        "log_effect": -0.10117800130402177,
+        "pct_effect": -9.622785405327061
+      },
+      {
+        "approx_inr_effect": -8643.419844534737,
+        "direction": "lowers price",
+        "factor": "Kilometres driven",
+        "log_effect": -0.057609822792743515,
+        "pct_effect": -5.598179002293014
+      },
+      {
+        "approx_inr_effect": -5905.7491152592465,
+        "direction": "lowers price",
+        "factor": "Premium brand",
+        "log_effect": -0.039719364888998854,
+        "pct_effect": -3.8940891759234098
+      },
+      {
+        "approx_inr_effect": 5342.04551011765,
+        "direction": "raises price",
+        "factor": "Brand",
+        "log_effect": 0.037339747541314416,
+        "pct_effect": 3.804563438702724
+      }
+    ]
+  },
+  {
+    "actual_inr": 265000.0,
+    "input": {
+      "company": "Toyota",
+      "fuel_type": "Petrol",
+      "kms_driven": 42000.0,
+      "name": "Toyota Etios G",
+      "year": 2013
+    },
+    "predicted_inr": 294068.15333969856,
+    "top_factors": [
+      {
+        "approx_inr_effect": 99560.75760645072,
+        "direction": "raises price",
+        "factor": "Brand",
+        "log_effect": 0.41334136788349785,
+        "pct_effect": 51.186103865680636
+      },
+      {
+        "approx_inr_effect": -121588.93457099318,
+        "direction": "lowers price",
+        "factor": "Model",
+        "log_effect": -0.34604905787113616,
+        "pct_effect": -29.252222109855573
+      },
+      {
+        "approx_inr_effect": 54332.52053299244,
+        "direction": "raises price",
+        "factor": "Vehicle age",
+        "log_effect": 0.20427476831465174,
+        "pct_effect": 22.663514762863656
+      },
+      {
+        "approx_inr_effect": -37155.98152465493,
+        "direction": "lowers price",
+        "factor": "Fuel type",
+        "log_effect": -0.11898373626883885,
+        "pct_effect": -11.217776005323843
+      },
+      {
+        "approx_inr_effect": -12013.302760605222,
+        "direction": "lowers price",
+        "factor": "Premium brand",
+        "log_effect": -0.04003970838006854,
+        "pct_effect": -3.924871148243758
+      }
+    ]
+  },
+  {
+    "actual_inr": 199999.0,
+    "input": {
+      "company": "Maruti",
+      "fuel_type": "Petrol",
+      "kms_driven": 44000.0,
+      "name": "Maruti Suzuki Wagon R",
+      "year": 2012
+    },
+    "predicted_inr": 197451.94870446212,
+    "top_factors": [
+      {
+        "approx_inr_effect": -25525.745823927202,
+        "direction": "lowers price",
+        "factor": "Model",
+        "log_effect": -0.12157648488039641,
+        "pct_effect": -11.447667838666831
+      },
+      {
+        "approx_inr_effect": -22518.906573683784,
+        "direction": "lowers price",
+        "factor": "Brand",
+        "log_effect": -0.10799980452764846,
+        "pct_effect": -10.237222810817093
+      },
+      {
+        "approx_inr_effect": -21861.85987115039,
+        "direction": "lowers price",
+        "factor": "Fuel type",
+        "log_effect": -0.10500836300202554,
+        "pct_effect": -9.968300679805619
+      },
+      {
+        "approx_inr_effect": 17568.98505574069,
+        "direction": "raises price",
+        "factor": "Vehicle age",
+        "log_effect": 0.0931888195748618,
+        "pct_effect": 9.76689770914032
+      },
+      {
+        "approx_inr_effect": -8085.773613556416,
+        "direction": "lowers price",
+        "factor": "Premium brand",
+        "log_effect": -0.040134323641321856,
+        "pct_effect": -3.93396089163901
+      }
+    ]
+  },
+  {
+    "actual_inr": 210000.0,
+    "input": {
+      "company": "Hyundai",
+      "fuel_type": "Petrol",
+      "kms_driven": 65480.0,
+      "name": "Hyundai i20 Asta 1.2",
+      "year": 2009
+    },
+    "predicted_inr": 159398.4689763025,
+    "top_factors": [
+      {
+        "approx_inr_effect": -50088.779622425616,
+        "direction": "lowers price",
+        "factor": "Vehicle age",
+        "log_effect": -0.2732557102391562,
+        "pct_effect": -23.91018067088677
+      },
+      {
+        "approx_inr_effect": -20220.12609865245,
+        "direction": "lowers price",
+        "factor": "Engine size (from listing text)",
+        "log_effect": -0.1194285251672591,
+        "pct_effect": -11.257256572023955
+      },
+      {
+        "approx_inr_effect": 17703.392445433758,
+        "direction": "raises price",
+        "factor": "Model",
+        "log_effect": 0.11772976102473809,
+        "pct_effect": 12.494006763585052
+      },
+      {
+        "approx_inr_effect": -15687.376911618258,
+        "direction": "lowers price",
+        "factor": "Fuel type",
+        "log_effect": -0.09386924018174625,
+        "pct_effect": -8.959820156827725
+      },
+      {
+        "approx_inr_effect": -12053.364557439412,
+        "direction": "lowers price",
+        "factor": "Kilometres driven",
+        "log_effect": -0.07289521173501523,
+        "pct_effect": -7.030175361214386
+      }
+    ]
+  },
+  {
+    "actual_inr": 95000.0,
+    "input": {
+      "company": "Maruti",
+      "fuel_type": "Petrol",
+      "kms_driven": 45000.0,
+      "name": "Maruti Suzuki Esteem VXi BS III",
+      "year": 2006
+    },
+    "predicted_inr": 106236.2608856517,
+    "top_factors": [
+      {
+        "approx_inr_effect": -99092.6525559171,
+        "direction": "lowers price",
+        "factor": "Vehicle age",
+        "log_effect": -0.6589476590549861,
+        "pct_effect": -48.26044753999843
+      },
+      {
+        "approx_inr_effect": -11478.025643905408,
+        "direction": "lowers price",
+        "factor": "Fuel type",
+        "log_effect": -0.10259489764816454,
+        "pct_effect": -9.750749872678677
+      },
+      {
+        "approx_inr_effect": -10498.240950793946,
+        "direction": "lowers price",
+        "factor": "Brand",
+        "log_effect": -0.09423665102264955,
+        "pct_effect": -8.993263161822384
+      },
+      {
+        "approx_inr_effect": -10445.89128666875,
+        "direction": "lowers price",
+        "factor": "Usage intensity (km/yr)",
+        "log_effect": -0.09378809978087776,
+        "pct_effect": -8.952432820438439
+      },
+      {
+        "approx_inr_effect": 4842.904380788276,
+        "direction": "raises price",
+        "factor": "Model",
+        "log_effect": 0.0466579188246552,
+        "pct_effect": 4.776352758926539
+      }
+    ]
+  }
+]

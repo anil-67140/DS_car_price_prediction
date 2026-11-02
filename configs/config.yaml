@@ -1,0 +1,119 @@
+# Central configuration. Every stage hashes the part of this file it depends on,
+# so changing a setting automatically invalidates only the checkpoints it affects.
+
+project:
+  name: car-price-prediction
+  version: "1.0.0"
+  seed: 42
+
+# Where everything is written. Override with env var CARPRICE_HOME
+# (on Colab the notebook points this at Google Drive).
+paths:
+  home: null            # null -> CARPRICE_HOME env var -> repository root
+  data_raw: data/raw
+  data_interim: data/interim
+  data_processed: data/processed
+  artifacts: artifacts
+  reports: reports
+  checkpoints: artifacts/checkpoints
+  logs: artifacts/logs
+
+dataset:
+  active: quikr         # key in configs/datasets.yaml
+
+target:
+  column: price_inr
+  log_transform: true   # models are fit on log1p(price); metrics reported in INR
+  definition: >-
+    Seller ASKING price in Indian Rupees (INR) taken from a classified listing.
+    It is NOT a transaction price and NOT an ex-showroom price.
+
+cleaning:
+  reference_year: null          # null -> max(year) in data (snapshot year); stored in metadata
+  min_year: 1990
+  min_price_inr: 10000
+  max_price_inr: 50000000
+  max_kms: 600000
+  # a car older than this with fewer km than `suspect_kms_below` is treated as a
+  # unit/entry error (e.g. "40 kms" for a 2006 car) -> kms set to missing, NOT row dropped
+  suspect_min_age_years: 3
+  suspect_kms_below: 1000
+  # price > factor * median price of the same model family (n >= min_group) is a
+  # candidate data-entry error and is reviewed, not blindly removed
+  price_ratio_review_factor: 6.0
+  price_ratio_min_group: 3
+  price_ratio_drop_factor: 10.0   # only drop if ALSO above this multiple (clear typo)
+
+features:
+  n_model_tokens_max: 2
+  use_engine_from_name: true
+  use_transmission_hint: true
+  categorical_min_frequency: 3
+  # feature-set variants compared in the ablation study (src/carprice/models/ablation.py)
+  variants: [base, base_plus_parsed, target_encoded]   # ablation only (base = original project's features); simple -> complex
+  compare_variants: [base_plus_parsed, target_encoded]  # every model is evaluated on each of these
+  chosen_variant: null          # null -> picked by ablation, then frozen in metadata
+
+split:
+  test_size: 0.20
+  cv_folds: 5
+  cv_repeats: 3
+  n_price_bins: 5
+
+models:
+  # Models to evaluate. Reasons for any exclusion are written to reports/model_reports.
+  include: [mean_baseline, median_baseline, linear, ridge, lasso, elasticnet, huber, knn,
+            decision_tree, random_forest, extra_trees, gradient_boosting, hist_gradient_boosting,
+            xgboost, lightgbm, catboost, svr, ebm, mlp]
+  n_jobs: 2
+
+tuning:
+  top_k: 4
+  optuna_trials: 40
+  random_search_iter: 30
+  timeout_seconds_per_model: 600
+
+selection:
+  rule: one_standard_error      # best CV MAE, then simplest/fastest within 1 SE
+  primary_metric: mae_inr
+  # lower tier = preferred when statistically tied
+  interpretability_tier:
+    linear: 1
+    ridge: 1
+    lasso: 1
+    elasticnet: 1
+    huber: 1
+    ebm: 1
+    decision_tree: 2
+    knn: 3
+    hist_gradient_boosting: 3
+    gradient_boosting: 3
+    random_forest: 3
+    extra_trees: 3
+    lightgbm: 3
+    xgboost: 3
+    catboost: 3
+    svr: 4
+    mlp: 4
+
+uncertainty:
+  alpha: 0.10                   # target miscoverage -> 90% prediction interval
+  method: mondrian_conformal    # or quantile_gbm
+  n_bins: 3
+
+explainability:
+  shap_sample: 200
+  pdp_features: [age, kms_driven]
+
+serving:
+  min_year: 1990
+  api_key_env: CARPRICE_API_KEY
+  max_batch: 50
+
+monitoring:
+  psi_warn: 0.10
+  psi_alert: 0.25
+  ks_alpha: 0.01
+  min_labeled_for_perf: 30
+  mae_degradation_ratio: 1.25
+  min_new_rows_for_retrain: 200

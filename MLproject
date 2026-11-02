@@ -1,0 +1,11 @@
+name: car-price-prediction
+python_env: python_env.yaml
+entry_points:
+  main:
+    parameters:
+      stages: {type: string, default: "download clean split eda ablation models tune select final explain package"}
+    command: "python scripts/run_pipeline.py --stages {stages}"
+  retrain:
+    parameters:
+      new_data: {type: string}
+    command: "python scripts/retrain.py --new-data {new_data}"

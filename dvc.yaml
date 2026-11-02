@@ -1,0 +1,25 @@
+# DVC pipeline mirroring the stages in src/carprice/pipeline.py.
+# The Python pipeline has its own verified-checkpoint resume (manifest.json) for Colab; DVC adds
+# data/model versioning and `dvc repro` / remote storage for team use.
+stages:
+  download:
+    cmd: python scripts/run_pipeline.py --stages download --no-mlflow
+    deps: [configs/datasets.yaml, src/carprice/data/ingest.py]
+    outs: [data/raw]
+  clean:
+    cmd: python scripts/run_pipeline.py --stages clean --no-mlflow
+    deps: [data/raw, src/carprice/data/clean.py, src/carprice/data/schema.py, src/carprice/features/parsing.py]
+    params: [cleaning, target]
+    outs: [data/interim/cleaned.csv]
+    metrics: [reports/metrics/cleaning_report.csv]
+  split:
+    cmd: python scripts/run_pipeline.py --stages split --no-mlflow
+    deps: [data/interim/cleaned.csv, src/carprice/features/split.py]
+    params: [split]
+    outs: [data/processed]
+  train:
+    cmd: python scripts/run_pipeline.py --stages eda ablation models tune select final explain package
+    deps: [data/processed, src/carprice]
+    params: [features, models, tuning, selection, uncertainty, explainability]
+    outs: [artifacts/models, reports/figures]
+    metrics: [reports/metrics/test_metrics.json]

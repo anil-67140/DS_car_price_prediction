@@ -1,0 +1,9 @@
+column,n_missing,pct_missing
+name,0,0.0
+company,0,0.0
+year,0,0.0
+kms_driven,8,1.1
+fuel_type,0,0.0
+price_inr,0,0.0
+kms_suspect,0,0.0
+source_row,0,0.0

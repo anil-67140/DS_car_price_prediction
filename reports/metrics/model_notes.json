@@ -1,0 +1,12 @@
+{
+  "catboost": "Run on the shared one-hot features (not CatBoost's native categorical handling) for a like-for-like comparison.",
+  "ebm": "Explainable Boosting Machine: additive + a few pairwise terms, intrinsically interpretable.",
+  "huber": "Outlier-robust linear fit - relevant for mis-priced listings.",
+  "knn": "Distance-based; sensitive to feature scaling and one-hot dimensionality.",
+  "lasso": "L1: sparse coefficients, doubles as embedded feature selection.",
+  "linear": "OLS on log price. Interpretable; unstable when many one-hot columns are collinear.",
+  "mean_baseline": "Predicts the arithmetic mean training price. The floor every model must beat.",
+  "median_baseline": "Predicts the median training price (robust to the expensive tail). Also the MASE reference.",
+  "mlp": "Included for completeness. With <1k tabular rows a neural net is not expected to win; if it does not, that is the (documented) result.",
+  "svr": "RBF kernel; needs scaled inputs."
+}

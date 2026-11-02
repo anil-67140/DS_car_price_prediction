@@ -1,0 +1,30 @@
+# data & generated artifacts (reproduced by the pipeline or tracked by DVC)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+reports/figures/*.png
+!reports/figures/.gitkeep
+# keep small text reports in git; large/derived things are rebuilt
+reports/metrics/*.parquet
+mlruns/
+.dvc/cache
+.dvc/tmp
+# credentials / secrets
+.env
+.env.*
+kaggle.json
+*.key
+*.pem
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store

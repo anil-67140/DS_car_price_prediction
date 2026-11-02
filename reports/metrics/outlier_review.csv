@@ -1,0 +1,6 @@
+source_row,name,company,year,kms_driven,price_inr,model_family,family_median_price,price_to_family_median,decision
+510,Jaguar XE XE Portfolio,Jaguar,2016,8500,2800000,XE,2800000.0,1.0,kept: plausible high-priced / rare vehicle
+562,Mahindra XUV500 W6,Mahindra,2014,45000,8500003,XUV500,800000.0,10.63,dropped: price typo
+719,Audi A3 Cabriolet 40 TFSI,Audi,2015,12516,3100000,A3,3100000.0,1.0,kept: plausible high-priced / rare vehicle
+768,Hindustan Motors Ambassador Classic Mark 4 – Befo,Hindustan Motors,1995,37000,750000,Ambassador,90000.0,8.33,kept: plausible high-priced / rare vehicle
+838,Ford Endeavor 4x4 Thunder Plus,Ford,2019,9000,2900000,Endeavor,2900000.0,1.0,kept: plausible high-priced / rare vehicle

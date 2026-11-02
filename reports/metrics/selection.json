@@ -1,0 +1,21 @@
+{
+  "best_mae_model": "svr",
+  "cv_mae_inr": 93435.92832434496,
+  "cv_source_file": "tuned_svr__base_plus_parsed.json",
+  "eligible_models": [
+    "svr"
+  ],
+  "mae_gate": 96835.75067473203,
+  "params": {
+    "C": 49.9706050271911,
+    "epsilon": 0.053037549674206416,
+    "gamma": 0.006579886275639512
+  },
+  "rationale": "Best CV MAE: svr (93,436 INR, SE 3,400). 1 model(s) are statistically tied with it (MAE <= 96,836 and RMSE <= 193,929). Among those the simplest (interpretability tier 4, 24 KB) is 'svr'.",
+  "rmse_gate": 193929.14565483452,
+  "rule": "one_standard_error",
+  "scaler": "robust",
+  "selected": "svr",
+  "selected_tuned": true,
+  "selected_variant": "base_plus_parsed"
+}

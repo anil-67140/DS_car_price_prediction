@@ -1,0 +1,46 @@
+# Dataset registry. Each entry maps a raw source onto the canonical schema used by the pipeline.
+#
+# Canonical columns: name, company, year, kms_driven, fuel_type, price_inr   (required)
+#                    transmission, owner, engine_cc, max_power_bhp, mileage_kmpl, seats (optional)
+#
+# Honesty note: "verified" means the pipeline was actually executed on it by the author of this
+# repository snapshot. Entries marked verified: false are adapters whose column layout is taken from
+# the dataset's public description and is checked at runtime by the schema validator - they
+# fail loudly with the list of missing columns rather than guessing.
+
+quikr:
+  verified: true
+  description: Quikr India used-car classified listings (the original Campus-X project data), ~892 raw rows.
+  market: India
+  currency: INR
+  price_basis: asking_price
+  snapshot_note: No listing dates. Max model year is 2019, so prices are circa 2019 (reference year is derived from data).
+  source:
+    type: url
+    url: https://raw.githubusercontent.com/anil-67140/Data-Science-Projects/main/campus-x-projects/03-car-price-predictior/quikr_car.csv
+    filename: quikr_car.csv
+    local_candidates:
+      - data/raw/quikr_car.csv
+  parser: quikr
+  license: >-
+    Not stated. The CSV is a scrape of public Quikr classified listings redistributed through the
+    author's own repository. Treat as educational/portfolio use only; do not redistribute commercially.
+    Verify terms before any commercial use.
+
+cardekho_v3:
+  verified: false
+  description: CarDekho used-car listings ("Car details v3.csv") from the Kaggle dataset nehalbirla/vehicle-dataset-from-cardekho. Adds transmission, owner, engine, power, mileage, seats.
+  market: India
+  currency: INR
+  price_basis: asking_price
+  snapshot_note: No listing date column; max year about 2020. Treat as a ~2020 snapshot.
+  source:
+    type: kaggle
+    slug: nehalbirla/vehicle-dataset-from-cardekho
+    filename: "Car details v3.csv"
+    local_candidates:
+      - data/raw/Car details v3.csv
+  parser: cardekho_v3
+  license: >-
+    Read from the Kaggle dataset page / `kaggle datasets metadata` at download time; the pipeline
+    writes the value it actually receives into reports/dataset_sources.json. Not asserted here.

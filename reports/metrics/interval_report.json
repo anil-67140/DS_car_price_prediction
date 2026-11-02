@@ -1,0 +1,136 @@
+{
+  "calibration": {
+    "bin_edges_inr": [
+      219361.0,
+      409240.0
+    ],
+    "global_quantile": 0.5731,
+    "implied_relative_halfwidth_pct": [
+      79.9,
+      81.0,
+      76.3
+    ],
+    "log_error_quantiles": [
+      0.5874,
+      0.5933,
+      0.567
+    ],
+    "method": "mondrian_conformal_log_abs_error",
+    "n_calibration": 1743,
+    "target_coverage": 0.9
+  },
+  "conformal": {
+    "by_group": {
+      "predicted_price_tier": {
+        "high": {
+          "coverage": 0.7755102040816326,
+          "median_width_inr": 666519.3499942995,
+          "n": 49
+        },
+        "low": {
+          "coverage": 0.8958333333333334,
+          "median_width_inr": 157996.77324793267,
+          "n": 48
+        },
+        "mid": {
+          "coverage": 0.9166666666666666,
+          "median_width_inr": 382680.0803541905,
+          "n": 48
+        }
+      },
+      "vehicle_age": {
+        "0-2y": {
+          "coverage": 0.7083333333333334,
+          "median_width_inr": 605408.4910902206,
+          "n": 24
+        },
+        "13y+": {
+          "coverage": 0.9444444444444444,
+          "median_width_inr": 91178.8721661646,
+          "n": 18
+        },
+        "3-5y": {
+          "coverage": 0.8292682926829268,
+          "median_width_inr": 505818.8809150916,
+          "n": 41
+        },
+        "6-8y": {
+          "coverage": 0.9487179487179487,
+          "median_width_inr": 401212.3816088161,
+          "n": 39
+        },
+        "9-12y": {
+          "coverage": 0.8695652173913043,
+          "median_width_inr": 212759.41405886877,
+          "n": 23
+        }
+      }
+    },
+    "coverage_se": 0.028636372363358614,
+    "empirical_coverage": 0.8620689655172413,
+    "mean_interval_score": 801945.9957398359,
+    "mean_width_inr": 445352.0290596182,
+    "median_relative_width_pct": 105.59829865694948,
+    "median_width_inr": 384980.5392551229,
+    "n": 145,
+    "target_coverage": 0.9
+  },
+  "primary": "mondrian_conformal",
+  "quantile_gbm": {
+    "by_group": {
+      "predicted_price_tier": {
+        "high": {
+          "coverage": 0.8367346938775511,
+          "median_width_inr": 523068.05329335073,
+          "n": 49
+        },
+        "low": {
+          "coverage": 0.8958333333333334,
+          "median_width_inr": 360571.64703435265,
+          "n": 48
+        },
+        "mid": {
+          "coverage": 0.8541666666666666,
+          "median_width_inr": 382082.6782010519,
+          "n": 48
+        }
+      },
+      "vehicle_age": {
+        "0-2y": {
+          "coverage": 0.7916666666666666,
+          "median_width_inr": 554356.9003723066,
+          "n": 24
+        },
+        "13y+": {
+          "coverage": 0.8888888888888888,
+          "median_width_inr": 392514.22237983596,
+          "n": 18
+        },
+        "3-5y": {
+          "coverage": 0.9024390243902439,
+          "median_width_inr": 504121.13190448063,
+          "n": 41
+        },
+        "6-8y": {
+          "coverage": 0.7948717948717948,
+          "median_width_inr": 319600.770890526,
+          "n": 39
+        },
+        "9-12y": {
+          "coverage": 0.9565217391304348,
+          "median_width_inr": 341154.42010577663,
+          "n": 23
+        }
+      }
+    },
+    "coverage_se": 0.028636372363358614,
+    "empirical_coverage": 0.8620689655172413,
+    "mean_interval_score": 812895.7969410087,
+    "mean_width_inr": 487996.00875012955,
+    "median_relative_width_pct": 115.58322519670222,
+    "median_width_inr": 406334.55861913087,
+    "n": 145,
+    "target_coverage": 0.9
+  },
+  "statement": "Intervals are conformal PREDICTION intervals for an individual listing's asking price, not confidence intervals for a mean. Empirical coverage on held-out data is reported with its binomial standard error because n_test is small."
+}

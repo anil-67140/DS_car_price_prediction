@@ -1,0 +1,16 @@
+.git
+.github
+data
+reports/figures
+notebooks
+tests
+mlruns
+artifacts/mlruns
+artifacts/checkpoints
+artifacts/optuna
+artifacts/logs
+__pycache__
+*.pyc
+.venv
+.env
+kaggle.json

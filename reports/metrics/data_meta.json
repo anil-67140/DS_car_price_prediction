@@ -1,0 +1,16 @@
+{
+  "currency": "INR",
+  "dataset": "quikr",
+  "market": "India",
+  "n_rows": 726,
+  "parser": "quikr",
+  "price_basis": "asking_price",
+  "raw_rows": 892,
+  "reference_year": 2019,
+  "snapshot_note": "No listing dates. Max model year is 2019, so prices are circa 2019 (reference year is derived from data).",
+  "target": {
+    "column": "price_inr",
+    "definition": "Seller ASKING price in Indian Rupees (INR) taken from a classified listing. It is NOT a transaction price and NOT an ex-showroom price.",
+    "log_transform": true
+  }
+}

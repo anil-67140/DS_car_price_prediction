@@ -1,0 +1,24 @@
+services:
+  api:
+    build: .
+    image: carprice:1.0.0
+    ports: ["8000:8000"]
+    environment:
+      CARPRICE_API_KEY: ${CARPRICE_API_KEY:?set CARPRICE_API_KEY in your shell or .env}
+      LOG_LEVEL: INFO
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+  ui:
+    build: .
+    image: carprice:1.0.0
+    command: ["python", "-m", "app.app"]
+    ports: ["7860:7860"]
+    environment:
+      PORT: "7860"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:7860/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+    restart: unless-stopped

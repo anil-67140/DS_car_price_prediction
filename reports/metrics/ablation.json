@@ -1,0 +1,173 @@
+{
+  "average_rank": {
+    "base": 3.0,
+    "base_plus_parsed": 1.5,
+    "target_encoded": 1.5
+  },
+  "chosen_variant": "base_plus_parsed",
+  "rule": "probe variant with the lowest average rank of CV MAE across Ridge and HistGradientBoosting, ties -> simpler; scaler deviates from the model default only if >3% lower CV MAE",
+  "scaler_choice": {
+    "elasticnet": "robust",
+    "huber": "robust",
+    "knn": "standard",
+    "lasso": "robust",
+    "linear": "robust",
+    "mlp": "standard",
+    "ridge": "robust",
+    "svr": "robust"
+  },
+  "scaler_table": [
+    {
+      "mae_inr": 100512.55934766744,
+      "model": "linear",
+      "r2": 0.7138056480947343,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 100512.55934766751,
+      "model": "linear",
+      "r2": 0.7138056480947338,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 107814.28887879432,
+      "model": "ridge",
+      "r2": 0.7091292772327196,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 107310.31781642909,
+      "model": "ridge",
+      "r2": 0.7117495915555215,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 114860.65587851443,
+      "model": "lasso",
+      "r2": 0.6993449172225917,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 114991.08672697925,
+      "model": "lasso",
+      "r2": 0.7001039389355762,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 111051.00093812578,
+      "model": "elasticnet",
+      "r2": 0.7109351564513733,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 110945.2784126169,
+      "model": "elasticnet",
+      "r2": 0.7128606037019519,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 97341.34133629747,
+      "model": "huber",
+      "r2": 0.6230519247136639,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 98520.67724838383,
+      "model": "huber",
+      "r2": 0.5882550054288754,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 135334.61871393293,
+      "model": "knn",
+      "r2": 0.4865434402462413,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 130581.70985922351,
+      "model": "knn",
+      "r2": 0.5174519599258692,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 103004.95165948215,
+      "model": "svr",
+      "r2": 0.7071364841919444,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 102317.86091008908,
+      "model": "svr",
+      "r2": 0.6907722154320949,
+      "scaler": "standard"
+    },
+    {
+      "mae_inr": 5013013.225547945,
+      "model": "mlp",
+      "r2": -121885.91828164089,
+      "scaler": "robust"
+    },
+    {
+      "mae_inr": 153680.86648168723,
+      "model": "mlp",
+      "r2": -1.9518334081823712,
+      "scaler": "standard"
+    }
+  ],
+  "variant_table": [
+    {
+      "mae_inr": 128516.46665445714,
+      "mae_se": 4367.589239563424,
+      "model": "ridge",
+      "r2": 0.5545133337619848,
+      "rank": 3.0,
+      "rmsle": 0.42632410692417844,
+      "variant": "base"
+    },
+    {
+      "mae_inr": 150245.61748143545,
+      "mae_se": 4692.43238663548,
+      "model": "hist_gradient_boosting",
+      "r2": 0.44743984039366475,
+      "rank": 3.0,
+      "rmsle": 0.49625284892963034,
+      "variant": "base"
+    },
+    {
+      "mae_inr": 107814.28887879432,
+      "mae_se": 3713.510642909027,
+      "model": "ridge",
+      "r2": 0.7091292772327196,
+      "rank": 1.0,
+      "rmsle": 0.39802856631113065,
+      "variant": "base_plus_parsed"
+    },
+    {
+      "mae_inr": 127530.79914654519,
+      "mae_se": 2489.0578607550015,
+      "model": "hist_gradient_boosting",
+      "r2": 0.6026921480204896,
+      "rank": 2.0,
+      "rmsle": 0.45032976595012925,
+      "variant": "base_plus_parsed"
+    },
+    {
+      "mae_inr": 124459.26403333945,
+      "mae_se": 3163.5197002092864,
+      "model": "ridge",
+      "r2": 0.5816558065554409,
+      "rank": 2.0,
+      "rmsle": 0.41481992454183025,
+      "variant": "target_encoded"
+    },
+    {
+      "mae_inr": 107119.38379886051,
+      "mae_se": 3758.9360812669556,
+      "model": "hist_gradient_boosting",
+      "r2": 0.718654386968973,
+      "rank": 1.0,
+      "rmsle": 0.4038156506273523,
+      "variant": "target_encoded"
+    }
+  ]
+}

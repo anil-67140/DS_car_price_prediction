@@ -1,0 +1,14 @@
+{
+  "quikr": {
+    "acquired_via": "url",
+    "bytes": 60094,
+    "dataset": "quikr",
+    "declared_license": "Not stated. The CSV is a scrape of public Quikr classified listings redistributed through the author's own repository. Treat as educational/portfolio use only; do not redistribute commercially. Verify terms before any commercial use.",
+    "filename": "quikr_car.csv",
+    "pipeline_verified_on_this_dataset": true,
+    "raw_rows": 892,
+    "retrieved_at": "2026-10-31T15:34:29+00:00",
+    "sha256": "a3f056c1f18b857ffec870e6855f70712753163fe5b23dd7f78a78fa8bb5c39a",
+    "url": "https://raw.githubusercontent.com/anil-67140/Data-Science-Projects/main/campus-x-projects/03-car-price-predictior/quikr_car.csv"
+  }
+}
